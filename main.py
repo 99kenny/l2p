@@ -152,11 +152,14 @@ if __name__ == '__main__':
     elif config == 'five_datasets_l2p':
         from configs.five_datasets_l2p import get_args_parser
         config_parser = subparser.add_parser('five_datasets_l2p', help='5-Datasets L2P configs')
+    elif config == 'cifar10_l2p':
+        from configs.cifar10_l2p import get_args_parser
+        config_parser = subparser.add_parser('cifar10_l2p', help='Split-CIFAR10 L2P configs')
     else:
         raise NotImplementedError
     
     get_args_parser(config_parser)
-
+    
     args = parser.parse_args()
 
     if args.output_dir:
